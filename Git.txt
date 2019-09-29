@@ -1,0 +1,230 @@
+1:40    Version Control introduction
+4:53    Why version Control
+12:51   Version Control Tools
+15:18   Git & GitHub
+21:56   Case Study: Dominion enterprises
+25:32   What is Git
+28:25   Features of Git
+41:48   What is a Repository
+44:24   Git Operations and Commands
+
+=================================================================================================================================================================
+Git
+---
+Version control and why do we actually need it
+Different version control tools 
+Github and git
+Case study - Dominion enterprises about how they're using github 
+What is Git - Features of Git
+What is a Repository
+Git Operations and Commands - All the git commands to perform all the git operations
+
+VCS Intro
+---------
+A VCS is a management system that manages/tracks the changes in your project. You might be adding new files or updating old ones the VCS will track all that. So everytime you make a changes in your project the VCS creates a snapshot of your entire project and saves it. These snapshots contain the state of the project and you treat them as different versions of your project. This is beneficial also in case you make a mistake you can rollback to the previous version and a stable state.
+
+Why VCS
+-------
+1. A VCS avails collaboration between team members working in a project. There might be situations when multiple developers are working in the same file. So without a VCS a developer might be unaware that another developer is working on the same file or if the functionality that he thinks needs to be implemented is already there. A VCS informs you the changes done in the same file(via conflicts) and as such developers even if they work in isolation on their individual systems become aware of what is happening in the project overall via the VCS. So it ensures collaboration between the developers.
+ 
+2. VCS automates certain things which would have been tedious for us to do manually. For eg if we were to do VC on our own we would have to make a choice between what to save for each version - should we save only the changes which would make it harder to visualize the entire project state OR save the entire project which would resultant in redundant data getting stored leading to high disk space consumption. Secondly even if you have a comprehensible naming scheme, naming the versions will eventually become diffcult as the project varies. Lastly specifying diffferences between various version will not be possible unless you document what was the different between the versions.
+
+3. It also maintains a backup as every developer has a copy of the project on his local machine too. So in case the server crashes developers still have the project on their individual machines. Also typically in Git projects developers usually update their local copies on a daily basis when they start working and whenever they are done the server copy is also updated. Also before any developer updates the server he has to first sync his local copy with the one at the server. So its really reliable when it comes to backup.
+
+4. VCS maintains version history to help you analyze how your project has evolved across versions. When you change version 
+	VCS provides you with proper description
+	What exactly was changed
+	When it was changed.
+	
+VCS Tools
+---------
+Git & Mercurial are distributed VCS as in they maintain a local copy of the projects on dev machines. SVN & CVS do not do that. Git is the most popular VCS now a days while other 3 are on the decline.
+A DVCS provides reliable backup as developers also have local copy of the code. Also because of local copy developers can work even if their is no network as all files are available locally as well. You only need network when you need to push/pull
+
+Github and git
+--------------
+Git is a VCS tool that allows developers to fetch code from the central server, work on it and push their local changes to the central server. With Git you commit/update your code on local copy of your repository while you push/pull from the central server.
+Github is a data space or the central server where you and your teams code is hosted.
+
+What is Git
+-----------
+Git is a DVCS that provides you all the benefits of a VCS. It has all the local -> remote repo push pull commit update stuff etc.
+
+Features
+--------
+Distributed - Allows distributed development of code. Every developer has a local copy of the entire development history and changes are copied from one repo to another.
+
+Reliable - Due to local repo on every developer machine. You can also maintain a duplicate copy of your central repository.  
+
+Compatible - Compatible with existing systems and protocols(ssh etc). For eg if you want to migrate from a CVS like SVN to Git you dont need to move your existing SVN repo to Git. You can access existing SVN & SVK repos using Git-SVN. The local repo will be now a Git one and the remote or the central repo will remain an SVN one.
+
+Non linear -  Git facilitates a nonlinear development of software. When you're working with git, it records the current state of the project by creating a tree graph from the index. A tree is a nonlinear data structure and this tree is in the form of a directed acyclic graph which is popularly known as the DAG. Git also includes techniques where you can navigate and visualize all of your work that you're currently doing.
+
+Branching - Nonlinear development of software can be achieved by branching and Git excels at that. This way Git stands out when compared to other VCS as it has a branching model. Git actually encourages you to have multiple local branches and all of the branches are actually independent of each other. Also the creation and merging and deletion of all these branches takes only a few seconds.
+
+Lightweight - Since every developer updates his local repository with the central repo which has all files from all developers it looks like the data might be very huge. But Git uses a lossless compression technique and it compresses the data on the client side so even though it might look like that it's got a lot of files when it actually comes to storage or storing the data in your local repository it is all compressed and it doesn't take up a lot of space. Only when you're fetching your data from the local repository into your workspace it converts it and then you can work on it and whenever you push it again you compress it again and store it in a very minimal space in your disk.
+
+Speed - Because Git has local copy of repo fetching your files is 100 times faster than fetching it over a network from a remote repository. Git is written in C and as such very close to machine language which makes is faster. As per a performance test done by Mozilla, Git is one order magnitude faster than other VCS.
+
+Open Source - Created by Linus Trovald.
+
+Secure - Git uses SHA1(cryptographic algorithm) to name and identify objects. 
+
+Economical - Released under the GPL license and is free. Also all heavy lifting is done on the client side. All development and commiting is done on the local repository. As such you are only using the central work when you are done with your work and you just need to push/pull. Thus you are not experimenting with central repos and they can be fairly simple. You will not need power hardware in the central repository side.
+
+=================================================================================================================================================================
+
+Repository
+----------
+A directory or storage space where your projects can live. It can be local to a folder on your computer, or it can be a storage space on GitHub or another online host. You can keep code files, text files, image files, you name it, inside a repository.
+
+	Types
+	-----
+	Central Repository
+	Local Repository
+
+Git Operations and Commands
+---------------------------
+You create a central repository on github for which you need to have a github account. For the local repo you need to install git on your local machine.
+
+Note: It is a good practice to create only one project per repository as you will not get confused later. Also by default your repository is public(which is free) and hence others can see your work/code. If you want a private repo you can have that too but you will need to pay some amount(7$/month or so).
+It is a good practice to initialize your repo with a README file and this will be the first file in your repository if you chose to create it. Git hub shows 1 initial commit for this file, 1 branch(master) and 1 contributor. The file can be edited and commited in github itself. It will show updated count for commits and updated status in comments alongwith a commit hash.
+.gitignore - Files that you dont want to get pushed or pull like log files etc.
+
+git init - Create a folder where you want your repository to be created. Open git bash and type git init which creates a new repository on your local machine. A .git folder will be created containing git meta info.
+Next you need to connect your local repo to the  remote repo on Github. For this you need the link where your remote repo is hosted. This is known as adding origin in git terminology. So you run
+
+		git remote add origin "<link>"	
+		git clone "<link>" - if you want to join an existing repository.
+
+git pull origin <branch name>: Next you do a git pull to sync your local repo with the remote repo. This will download the README file that you edited on the remote.
+git push - To checkin your local changed to the remote.
+
+Git has a concept of a layer that resides in between your "workspace and your local repository". This is known as the index and you need to add your changed files to index before you can commit/add them to your local repo. The
+git status: command tells us which files in the workspace have changed as well as "untracked files present in the index". This is similar to the staging window in eclipse that shows the files that changed since the last commit.
+
+git add <filepath>: command adds the files to index. This is similar to the dragging and drop operation we do from git staging box to index box.
+git commit -m "<commit message>" : Commits all files in index. Similar to writing a commit message in the box and pressing the commit button. The git commit creates a commit object which refers to recording snapshots of the project at a given time. Hence a commit snapshot is a snapshot of your changed project.
+-->  Also commited snapshots will never change unless done explicitly.
+
+To add/commit all tracked files in one go 
+git add -A            (adds all tracked as well as untracked files simultaneously)
+git commit -a -m ""   (-a adds all tracked files(only) to index you can avoid explicitly running git add <filename> command already tracked files")
+
+git log: logs all commits in your project with timestamp and comments.
+
+Branches - Branches are pointers to a specific commit.
+ local branches
+ remote tracking branches
+ 
+Suppose you want to implement a new feature and its a big feature that will require multiple commits and checkins. So if you to work individually or dont want to interfere with the master branch you can branch out and create a new branch. And once your implementation is done you can merge your changes on the master.
+
+git branch <branch name>: To create a new branch from the existing branch.
+git checkout <branch name>: To checkout to the newly created branch from the existing branch. The repository view in your system shows the new branch files now.
+ls : To list all files in the current folder
+
+Merging - Combining the work of different branches.
+git merge <branch name> : Merges changes of specified branch into current branch. Hence to do this you mut be checked out on the destination branch ie the branch ON WHICH you want to merge. Even after merging is done your the branch that you merged still exists seperately. This means if you make further changes tn this branch it still continues to grow as a seperate branch and you will have to re-merge any extra code commited on that branch.
+
+cat <filename>: To print the file content on gitbash.
+
+git stash
+git fetch - pulls all new files from the central repo just like pull but does not override the files in your local repo. To override you need to perform a merge.
+Hence git pull = git fetch + git merge.
+
+Rebasing:
+
+
+
+
+
+
+
+Why Use an SSH Key?
+-------------------
+When working with a GitHub repository, you'll often need to identify yourself to GitHub using your username and password. An SSH key is an alternate way to identify yourself that doesn't require you to enter you username and password every time. SSH keys come in pairs, a public key that gets shared with services like GitHub, and a private key that is stored only on your computer. If the keys match, you're granted access. The cryptography behind SSH keys ensures that no one can reverse engineer your private key from the public one.
+
+Ssh keys and code push
+----------------------
+The git repo that we created is a public one and as such we have given read access to everyone. That means others have rights to download the repo. However
+to push changes to the central repo you need some kind of authentication so that only valid users can push changes to it. You give the checkin rights by creating ssh keys, uploading the public key on github and validating it. The key is generated by 
+ssh-keygen
+
+An id_rsa.pub file is created in your <Users>/.ssh folder. Copy its content at github account settings SSH and GPG keys. Next you validate this key by
+ssh-keygen -t rsa -b 2048 -C ""
+
+ssh -T <your ssh link>
+
+Once validated you key becomes green at github and you should now be able to push changes into the central repository. 
+
+To push an entire branch that resides in your local repo
+git push origin <branch name>    
+
+Reverting a check-in
+--------------------
+ To revert a file to its previous version you need to know the commit hash of that version for that file. You can know the commit version with the git log command. Then run
+ git checkout <commit #> <filename>: commit # can be just first 8 digits
+ 
+Commands
+--------
+.gitignore
+
+git workflows
+-------------
+git init
+git remote add origin "<link>"	
+
+ssh-keygen
+ssh -T git@github.com
+git pull origin <branch name>
+
+git status
+git add <filepath> / git add -A
+git commit -m ""   / git commit -a -m ""
+
+git push origin <branch name>
+git log
+
+git clone <repo link>  - to join existing repo
+
+Branching
+git branch - to list all branches in current repository.
+git branch <branch name> - to create a new branch
+git checkout <branch name> - to work with the newly created branch
+git merge <branch name> 
+
+git fetch - Only fetch changes from remote repo but dont override the local repo. Use git merge seperately to do that.
+Hence git pull = git fetch + git merge.
+	  git fetch origin newBranch
+	  git merge origin/newBranch
+
+git stash
+git clone --single-branch --branch <branch name> <repo link>
+
+git checkout <commit #> <filename> //pull out a particular version of a file
+ls
+cat <filename> 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+You can go the settings section of your github repository and under it in the "Danger zone" section to delete the repository.
+How to go back after git add or git commit ?
+
+
+AWS
+Mongo
+Git
+LinkedIn
+Apply
+
+
+ 
+ 
+
+
+
+
+
+	
+
+
+
